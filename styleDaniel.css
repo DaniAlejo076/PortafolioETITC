@@ -1,0 +1,319 @@
+/* ==========================
+   ESTILOS GENERALES
+========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background-color: #f4f4f8;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+.header {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  color: #fff;
+  padding-bottom: 4rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #e0e1dd;
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: #e0e1dd;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #00b4d8;
+}
+
+/* ==========================
+   HERO
+========================== */
+.inicio {
+  text-align: center;
+  padding: 5rem 2rem;
+  color: #fff;
+}
+
+.inicio h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.inicio h1 span {
+  color: #00b4d8;
+}
+
+.inicio p {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.1rem;
+  color: #d9d9d9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  margin: 0.3rem;
+  border-radius: 8px;
+  background: #00b4d8;
+  color: #fff;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #0077b6;
+}
+
+/* ==========================
+   SECCIONES GENERALES
+========================== */
+.seccion {
+  padding: 4rem 5%;
+}
+
+.titulo-seccion {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+  color: #0d1b2a;
+  position: relative;
+}
+
+.titulo-seccion::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #00b4d8;
+  margin: 0.5rem auto 0 auto;
+  border-radius: 2px;
+}
+
+/* ==========================
+   SOBRE MÍ
+========================== */
+.sobremi .sobre-mi-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.sobre-mi-texto {
+  flex: 1 1 300px;
+}
+
+.parrafo-destacado {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #0077b6;
+}
+
+.sobre-mi-imagen {
+  flex: 1 1 250px;
+  text-align: center;
+}
+
+.sobre-mi-imagen img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #00b4d8;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.sobre-mi-imagen figcaption {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* ==========================
+   HABILIDADES
+========================== */
+.lista-habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.2rem;
+  text-align: center;
+}
+
+.lista-habilidades li {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-weight: 500;
+}
+
+.lista-habilidades li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* ==========================
+   PORTFOLIO
+========================== */
+.grid-portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 1rem 1rem 0.5rem 1rem;
+  color: #0d1b2a;
+}
+
+.card p {
+  padding: 0 1rem 1rem 1rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ==========================
+   CONTACTO
+========================== */
+.form-contacto {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-contacto button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  background: #00b4d8;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-contacto button:hover {
+  background: #0077b6;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+.footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #1b263b;
+  color: #e0e1dd;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================
+   BOTÓN SCROLL TO TOP
+========================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00b4d8;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 0.7rem;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s;
+}
+
+.scroll-to-top:hover {
+  background: #0077b6;
+}
+
+.scroll-to-top i {
+  font-size: 1.2rem;
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  .nav .menu {
+    display: none;
+  }
+
+  .inicio h1 {
+    font-size: 2rem;
+  }
+
+  .sobre-mi-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}

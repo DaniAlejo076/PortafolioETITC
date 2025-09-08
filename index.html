@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Desarrollo Web - Programación III</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0c2461 0%, #1e3799 25%, #2c3e50 50%, #1e3c72 75%, #2d3436 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            padding: 20px;
+        }
+
+        .container {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .header {
+            margin-bottom: 2.5rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #ffffff, #4ecdc4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            color: #a8e6cf;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #81ecec;
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+        }
+
+        .students-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            margin-top: 3rem;
+        }
+
+        .student-button {
+            display: inline-block;
+            padding: 1.4rem 3rem;
+            background: linear-gradient(45deg, #2c3e50, #34495e);
+            color: white;
+            text-decoration: none;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .student-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.6s;
+        }
+
+        .student-button:hover::before {
+            left: 100%;
+        }
+
+        .student-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .student-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
+
+        .student-daniel {
+            background: linear-gradient(45deg, #2980b9, #2471a3);
+        }
+
+        .student-daniel:hover {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            box-shadow: 0 12px 30px rgba(52, 152, 219, 0.4);
+        }
+
+        .student-helen {
+            background: linear-gradient(45deg, #27ae60, #219653);
+        }
+
+        .student-helen:hover {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            box-shadow: 0 12px 30px rgba(46, 204, 113, 0.4);
+        }
+
+        .button-icon {
+            margin-right: 12px;
+            font-size: 1.3rem;
+            vertical-align: middle;
+        }
+
+        .footer {
+            margin-top: 3.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            color: #b2bec3;
+        }
+
+        .decoration {
+            margin: 2rem 0;
+        }
+
+        .decoration::before,
+        .decoration::after {
+            content: '✦';
+            color: #74b9ff;
+            margin: 0 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Animaciones */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .delay-1 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-2 {
+            animation-delay: 0.4s;
+        }
+
+        .delay-3 {
+            animation-delay: 0.6s;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .student-button {
+                padding: 1.2rem 2.5rem;
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .student-button {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .button-icon {
+                font-size: 1.1rem;
+                margin-right: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header animated">
+            <h1>Proyecto Desarrollo Web</h1>
+            <h2 class="delay-1">Programación III</h2>
+            <h3 class="delay-2">S6A</h3>
+        </div>
+
+        <div class="decoration delay-2"></div>
+
+        <div class="students-container">
+            <a href="PortafolioDaniel.html" class="student-button student-daniel animated delay-1">
+                <span class="button-icon">👨‍💻</span>
+                Daniel Martinez
+            </a>
+            
+            <a href="PortafolioHelen.html" class="student-button student-helen animated delay-2">
+                <span class="button-icon">🌸</span>
+                Helen Rodriguez
+            </a>
+        </div>
+
+        <div class="footer animated delay-3">
+            <p>Desarrollo Web - Programación III - S6A</p>
+        </div>
+    </div>
+
+    <script>
+        // Efecto de carga suave
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 1s ease-in-out';
+            
+            setTimeout(function() {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        // Efectos interactivos para los botones
+        document.querySelectorAll('.student-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') {
+                    e.preventDefault();
+                    
+                    // Efecto visual para el botón de Daniel (sin enlace)
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        alert('Este enlace está en desarrollo');
+                    }, 300);
+                } else {
+                    // Efecto visual para el botón con enlace
+                    this.style.transform = 'scale(0.95)';
+                    
+                    // Permitir que la animación se complete antes de redirigir
+                    setTimeout(() => {
+                        window.location.href = this.href;
+                    }, 400);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
